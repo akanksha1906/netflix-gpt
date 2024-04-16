@@ -8,12 +8,10 @@ import {
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -53,7 +51,6 @@ const Login = () => {
                     photoURL: photoURL,
                   })
                 );
-              navigate("/browse");
 
               // Profile updated!
               // ...
@@ -93,7 +90,6 @@ const Login = () => {
                     photoURL: photoURL,
                   })
                 );
-          navigate("/browse");
 
           // ...
           //   console.log("user", user);
